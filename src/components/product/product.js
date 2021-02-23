@@ -5,7 +5,9 @@ import styles from './product.module.css';
 import { ReactComponent as Minus } from '../../icons/minus.svg';
 import { ReactComponent as Plus } from '../../icons/plus.svg';
 
-import { increment, decrement } from '../../redux/actions';
+////>>add elveret
+import { increment, decrement, clearAmount } from '../../redux/actions';
+//<<
 
 const Product = ({ product, amount, increment, decrement, fetchData }) => {
   useEffect(() => {
@@ -73,6 +75,9 @@ const mapStateToProps = (state, props) => ({
 const mapDispatchToProps = (dispatch, props) => ({
   increment: () => dispatch(increment(props.product.id)),
   decrement: () => dispatch(decrement(props.product.id)),
+  ////>>add elveret
+  clearAmount: () => dispatch(clearAmount(props.product.id)),
+  //<<
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Product);

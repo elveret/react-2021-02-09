@@ -5,6 +5,9 @@ import Reviews from '../reviews';
 import Banner from '../banner';
 import Rate from '../rate';
 import styles from './restaurant.module.css';
+////>>add elveret
+import Basket from '../basket/basket';
+//<<
 
 const Restaurant = ({ restaurant }) => {
   const { name, menu, reviews } = restaurant;
@@ -22,6 +25,8 @@ const Restaurant = ({ restaurant }) => {
       <div className={styles.restaurant}>
         <Menu menu={menu} key={restaurant.id} />
         <Reviews reviews={reviews} />
+
+        <Basket />
       </div>
     </div>
   );
